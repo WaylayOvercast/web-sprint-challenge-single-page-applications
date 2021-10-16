@@ -111,10 +111,12 @@ const App = () => {
           <div className="top-imgDiv">
             <img className="top-img" src='https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg' alt='pizza'/>
           </div>
-          <p className="home-desc">Welcome to lambda eats, we deliver pizza straight from the oven straight to your desk! order any of our handcrafted quality gamer/coder grade pizzas! theyre chalk'full of delicious heart stopping cholesterol!</p>
-          <div className="make">
-            <p className="home-pizza">Create you own here!</p>
-            <Link to='/pizza' id='order-pizza'> Create </Link>  {/*not sure why the test cant see this, ive moved it to many other places and it seems to be because it is inside router*/}
+          <div className='bottom'>
+            <p className="home-desc">Welcome to lambda eats, we deliver pizza straight from the oven straight to your desk! order any of our handcrafted quality gamer/coder grade pizzas! theyre chalk'full of delicious heart stopping cholesterol!</p>
+            <div className="make">
+              <img className="make-img" src="https://cdn.pixabay.com/photo/2015/09/16/20/10/dough-943245_960_720.jpg"></img>
+              <Link className="create-btn" to='/pizza' id='order-pizza'> Create Your Own! </Link>  {/*not sure why the test cant see this, ive moved it to many other places and it seems to be because it is inside router*/}
+            </div>
           </div>
         </div>
       </div>
@@ -123,61 +125,67 @@ const App = () => {
       <form id='pizza-form' onSubmit={onSub}>
         <div className="fill-form">
           <div className="inner-form">
-            <p className="fill-form-desc"/>
-            <label>
-              Name on order:&nbsp;
-              <input
-              id='name-input'
-              onChange={onUpdate}
-              value={fillForm.name}
-              name='name'
-              type='text'/>
-            </label>
-            <label> Choose your Size
-            <div className="error">{dataErr.size}</div>
-              <select 
-              id='size-dropdown'
-              onChange={onUpdate}
-              name='size'>
-                 <option value="">-- Select a size here --</option>
-                 <option value='10inch' >10inch</option>
-                 <option value='12inch' >12inch</option>
-                 <option value='14inch' >14inch</option>
-                 <option value='16inch' >16inch</option>
-              </select>
-            </label>
-            <p>Choice of Topping</p>
-            <label>Pepperoni
-              <input
-              type="Checkbox"
-              name="pepperoni"
-              onChange={onUpdate}/>
-            </label>
-            <label>Sausage
-              <input
-              type="Checkbox"
-              name="sausage"
-              onChange={onUpdate}/>
-            </label>
-            <label>Bacon
-              <input
-                type="Checkbox"
-                name="bacon"
-                onChange={onUpdate}/>
-            </label>
-            <label>Green Pepper
-              <input
-              type="Checkbox"
-              name="greenPepper"
-              onChange={onUpdate}/>
-            </label>
-            <label>Grilled Chicken
-              <input
-              type="Checkbox"
-              name="grilledChicken"
-              onChange={onUpdate}/>
-            </label>
-            <label className="special" >
+            <p className="fill-form-desc">Fillout our custom form made by a grade A computer proggramer that totally knows what hes doing and learns as fast as your grandmother runs! we've got everything from pizza to.....pizza!</p>
+            <div className="flex-div">
+              <div className="right">
+                <label className="i">
+                  Name on order:&nbsp;
+                  <input
+                  id='name-input'
+                  onChange={onUpdate}
+                  value={fillForm.name}
+                  name='name'
+                  type='text'/>
+                </label>
+                <label className="i"> Choose your Size
+                <div className="error">{dataErr.size}</div>
+                  <select 
+                  id='size-dropdown'
+                  onChange={onUpdate}
+                  name='size'>
+                    <option value="">-- Select a size here --</option>
+                    <option value='10inch' >10inch</option>
+                    <option value='12inch' >12inch</option>
+                    <option value='14inch' >14inch</option>
+                    <option value='16inch' >16inch</option>
+                  </select>
+                </label>
+              </div>
+              <div className="left">
+                <p className="i">Choice of Topping</p>
+                <label className="i">Pepperoni
+                  <input
+                  type="Checkbox"
+                  name="pepperoni"
+                  onChange={onUpdate}/>
+                </label>
+                <label className="i">Sausage
+                  <input
+                  type="Checkbox"
+                  name="sausage"
+                  onChange={onUpdate}/>
+                </label>
+                <label className="i">Bacon
+                  <input
+                    type="Checkbox"
+                    name="bacon"
+                    onChange={onUpdate}/>
+                </label>
+                <label className="i">Green Pepper
+                  <input
+                  type="Checkbox"
+                  name="greenPepper"
+                  onChange={onUpdate}/>
+                </label>
+                <label className="i">Grilled Chicken
+                  <input
+                  type="Checkbox"
+                  name="grilledChicken"
+                  onChange={onUpdate}/>
+                </label>
+              </div>
+            </div>
+            <label className="special i" >
                 Custom instructions:&nbsp;
                 <textarea 
                 id="special-text"
